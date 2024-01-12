@@ -1,8 +1,11 @@
 spring:
   datasource:
-    dbcp2:
-      driver-class-name: com.nysql.cj.jdbc.Driver
+      driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://localhost:3306/spring_db?useTimezone=true&serverTimezone=UTC
       username: root
       password: 1234
   jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+    show-sql: false
