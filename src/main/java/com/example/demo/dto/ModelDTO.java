@@ -1,9 +1,6 @@
 package com.example.demo.dto;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -12,6 +9,7 @@ import java.io.Serializable;
 @Setter
 @EqualsAndHashCode
 @NoArgsConstructor
+@ToString
 public class ModelDTO implements Serializable {
 
     @Serial
