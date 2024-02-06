@@ -25,7 +25,7 @@ public class Controller {
     @Autowired
     ModelService service;
 
-    @PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE,
+    @PostMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "Create a new Model", description = "Create a new Model", tags = {"Model CRUD"},
             responses = {
@@ -42,7 +42,7 @@ public class Controller {
         return service.create(Model);
     }
 
-    @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "Find all Models", description = "Find all Models", tags = {"Model CRUD"},
             responses = {
                     @ApiResponse(responseCode = "200", description = "Success",
@@ -76,7 +76,7 @@ public class Controller {
         return service.findById(id);
     }
 
-    @PutMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE,
+    @PutMapping(value = "", produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @Operation(summary = "Update a Model", description = "Update a Model", tags = {"Model CRUD"},
             responses = {
