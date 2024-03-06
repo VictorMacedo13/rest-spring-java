@@ -1,6 +1,7 @@
 package com.example.demo.exception.handler;
 
 import com.example.demo.exception.ExceptionResponse;
+import com.example.demo.exception.InvalidJwtAuthenticationException;
 import com.example.demo.exception.NotFoundException;
 import com.example.demo.exception.NotNullException;
 import org.springframework.http.HttpStatus;
@@ -45,5 +46,15 @@ public class CustomizedResponseEntityExceptionHendler extends ResponseEntityExce
                 request.getDescription(false)
         );
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exceptionResponse);
+    }
+
+    @ExceptionHandler(InvalidJwtAuthenticationException.class)
+    public final ResponseEntity<ExceptionResponse> invalidJwtAuthenticationException(Exception ex, WebRequest request) {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(
+                new Date(),
+                ex.getMessage(),
+                request.getDescription(false)
+        );
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(exceptionResponse);
     }
 }
